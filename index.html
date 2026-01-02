@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulaire de Contact</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Lato', Arial, sans-serif;
+    background:#f4f4f4;
+    padding:20px;
+  }
+
+  form {
+    max-width:600px;
+    width:100%;
+    margin:auto;
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  input, textarea {
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    background:#f0f0f0;
+    color:#232323;
+    font-family:'Lato', Arial, sans-serif;
+    box-sizing:border-box;
+    transition: border 0.3s, background 0.3s;
+  }
+
+  input:focus, textarea:focus {
+    border-color:#232323;
+    background:#e8e8e8;
+    outline:none;
+  }
+
+  button {
+    background:#232323;
+    color:#fff;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    width:100%;
+    font-weight:bold;
+    cursor:pointer;
+    transition: background 0.3s;
+  }
+
+  button:hover {
+    background:#555;
+  }
+
+  .row {
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+  }
+
+  .col {
+    flex:1;
+    display:flex;
+    flex-direction:column;
+  }
+
+  @media screen and (max-width: 768px) {
+    .row {
+      flex-direction:column;
+      gap:15px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<form action="https://formspree.io/f/mgovorjq" method="POST" enctype="multipart/form-data">
+  <div class="row">
+    <div class="col"><input type="text" name="prenom" placeholder="Prénom" required></div>
+    <div class="col"><input type="text" name="nom" placeholder="Nom" required></div>
+  </div>
+
+  <div class="row">
+    <div class="col"><input type="email" name="email" placeholder="Mail" required></div>
+    <div class="col"><input type="text" name="telephone" placeholder="Téléphone" required></div>
+  </div>
+
+  <div class="col"><input type="file" name="fichier" accept=".pdf,.jpeg,.jpg,.png"></div>
+  <div class="col"><textarea name="message" placeholder="Message" rows="5" required></textarea></div>
+  <div class="col"><button type="submit">Envoyer</button></div>
+</form>
+
+</body>
+</html>
